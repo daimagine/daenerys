@@ -1,13 +1,8 @@
 var React = require('react');
 var Router = require('react-router');
-var State = Router.State;
 var Link = Router.Link;
 var ReactPropTypes = React.PropTypes;
-var ReactBootstrap = require('react-bootstrap')
-	, Modal = ReactBootstrap.Modal
-	, Button = ReactBootstrap.Button
-	, Input = ReactBootstrap.Input;
-var AppConstants = require('../../constants/AppConstants.js')	
+var AppConstants = require('../../../constants/AppConstants.js')	
 	, ProductCategory = AppConstants.ProductCategory;
 
 
@@ -37,6 +32,12 @@ var ProductOverview = React.createClass({
 						</div>
 					</div>
 					{categoryEntity}
+					<Link to="payment" params={{productId: this.props.hashedId}}
+						href="javascript:;" data-toggle="tooltip" data-placement="top" 
+						title="Penjual hanya akan mendapatkan uang jika barang sudah ada di tangan Anda." 
+						className="btn btn-warning btn-block btn-large tip">
+						Beli
+					</Link>
 				</div>
 			</div>
 		);
