@@ -12,7 +12,7 @@ var PaymentMethod = React.createClass({
     return(
       <div className="grid simple">
         <div className="grid-title">
-          <h4>Payment Method</h4>
+          <h4>Metode Pembayaran</h4>
         </div>
         <div className="grid-body">
           <ul className="list-inline with-margin payment-method">

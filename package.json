@@ -18,7 +18,8 @@
     "keymirror": "^0.1.1",
     "react-bootstrap": "^0.23.7",
     "react-script-loader": "daimagine/ReactScriptLoader",
-    "superagent": "^1.2.0"
+    "superagent": "^1.2.0",
+    "numeral": "latest"
   },
   "devDependencies": {
     "axios": "^0.5.4",

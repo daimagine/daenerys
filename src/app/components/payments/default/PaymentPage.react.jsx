@@ -13,6 +13,8 @@ var Header = require('../../../components/common/Header.react.jsx');
 var ErrorNotice = require('../../../components/common/ErrorNotice.react.jsx');
 var MessageNotice = require('../../../components/common/MessageNotice.react.jsx');
 
+var CartInfo = require('./CartInfo.react.jsx');
+var PaymentInfo = require('./PaymentInfo.react.jsx');
 var PaymentMethod = require('./PaymentMethod.react.jsx');
 
 
@@ -88,6 +90,12 @@ var PaymentPage = React.createClass({
 		if (!this.state.scriptLoading && this.props.product) {
 			content = (
 				<div>
+					<div className="col-xs-12 col-sm-6">
+						<CartInfo {...this.props} />
+					</div>
+					<div className="col-xs-12 col-sm-6">
+						<PaymentInfo {...this.props} />
+					</div>
 					<div className="col-xs-12">
 						<PaymentMethod {...this.props} />
 					</div>
