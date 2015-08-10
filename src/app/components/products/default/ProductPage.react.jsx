@@ -25,7 +25,7 @@ var ProductPage = React.createClass({
   	mixins: [State, ReactScriptLoader.ReactScriptLoaderMixin],
 
   	propTypes: {
-  		user: ReactPropTypes.object,
+		affiliator: ReactPropTypes.object,
   		product: ReactPropTypes.object,
   		errors: ReactPropTypes.array,
   		messages: ReactPropTypes.array

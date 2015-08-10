@@ -3,8 +3,8 @@ var Router = require('react-router');
 var State = Router.State;
 var ReactPropTypes = React.PropTypes;
 
-var ProductStore = require('../../stores/ProductStore.react.jsx');
-var ProductActionCreators = require('../../actions/ProductActionCreators.react.jsx');
+var AffiliateStore = require('../../stores/AffiliateStore.react.jsx');
+var AffiliateActionCreators = require('../../actions/AffiliateActionCreators.react.jsx');
 
 
 var BaseProductPage = React.createClass({
@@ -20,8 +20,11 @@ var BaseProductPage = React.createClass({
 	getInitialState: function() {
     	console.log('BaseProductPage.react: getInitialState')
 		return {
-			hashedId: this.getParams().productId,
-			product: ProductStore.getProduct(),
+			hashedId: this.getParams().token,
+			product: AffiliateStore.getProduct(),
+			customer: AffiliateStore.getCustomer(),
+			affiliate: AffiliateStore.getAffiliate(),
+			affiliator: AffiliateStore.getAffiliator(),
 			errors: [],
 			messages: [],
 			template: 'default'
@@ -30,21 +33,20 @@ var BaseProductPage = React.createClass({
 
 	componentDidMount: function() {
     	console.log('BaseProductPage.react: componentDidMount')
-		ProductStore.addChangeListener(this._onChange);
-		ProductActionCreators.loadProduct(this.getParams().productId);
+		AffiliateStore.addChangeListener(this._onChange);
+		AffiliateActionCreators.loadAffiliateProduct(this.getParams().token);
 	},
 
 	componentWillUnmount: function() {
     	console.log('BaseProductPage.react: componentWillUnmount')
-		ProductStore.removeChangeListener(this._onChange);
+		AffiliateStore.removeChangeListener(this._onChange);
 	},
 
 	_onChange: function() {
     	console.log('BaseProductPage.react: _onChange');
     	var template = this.state.template;
-    	var product = ProductStore.getProduct();
-    	if (product) {
-	    	var customer = product.customer;
+    	var customer = AffiliateStore.getCustomer();
+    	if (customer) {
 	    	if (customer.template) {
 	    		template = customer.template;
 	    	}
@@ -57,9 +59,12 @@ var BaseProductPage = React.createClass({
 	    	console.log('BaseProductPage.react: adding custom style', style);
     	}
 		this.setState({
-			product: ProductStore.getProduct(),
-			errors: ProductStore.getErrors(),
-			messages: ProductStore.getMessages(),
+			product: AffiliateStore.getProduct(),
+			customer: AffiliateStore.getCustomer(),
+			affiliate: AffiliateStore.getAffiliate(),
+			affiliator: AffiliateStore.getAffiliator(),
+			errors: AffiliateStore.getErrors(),
+			messages: AffiliateStore.getMessages(),
 			template: template
 		});
 	},
@@ -73,7 +78,10 @@ var BaseProductPage = React.createClass({
     			hashedId={this.state.hashedId}
     			errors={this.state.errors}
     			messages={this.state.messages}
-    			product={this.state.product} />
+    			product={this.state.product} 
+    			customer={this.state.customer}
+    			affiliate={this.state.affiliate}
+    			affiliator={this.state.affiliator} />
 		);
 	}
 
