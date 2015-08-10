@@ -7,19 +7,19 @@ var request = WebAPIUtils.api.request;
 
 module.exports = {
 
-  loadProduct: function(productId) {
-    console.log('ProductService: loadProduct');
-    request.get(APIEndpoints.PRODUCTS + '/' + productId)
+  loadAffiliateProduct: function(token) {
+    console.log('AffiliateService: loadAffiliateProduct');
+    request.get(APIEndpoints.AFFILIATE_PRODUCT + '/' + token)
       .type('application/json')
       .end(function(error, res) {
         if (res) {
           console.log(res);
           if (res.error) {
             var errorMsgs = WebAPIUtils.getErrors(res);
-            ServerActionCreators.receiveProduct(null, errorMsgs);
+            ServerActionCreators.receiveAffiliateProduct(null, errorMsgs);
           } else {
             var json = res.body;
-            ServerActionCreators.receiveProduct(json, null);
+            ServerActionCreators.receiveAffiliateProduct(json, null);
           }
         }
       });

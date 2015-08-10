@@ -1,20 +1,11 @@
 var React = require('react');
 var ReactPropTypes = React.PropTypes;
-var ProductStore = require('../../stores/ProductStore.react.jsx')
-var ErrorNotice = require('../../components/common/ErrorNotice.react.jsx');
-var ProductActionCreators = require('../../actions/ProductActionCreators.react.jsx');
-var StringUtils = require('../../utils/StringUtils.js');
+var StringUtils = require('../../../utils/StringUtils.js');
 
 
 var ProductDescription = React.createClass({
 	propsTypes: {
 		product: ReactPropTypes.object
-	},
-
-	getInitialState: function() {
-    	console.log('ProductDescription.react: getInitialState')
-		return {
-		}
 	},
 
 	componentDidMount: function() {
@@ -25,15 +16,11 @@ var ProductDescription = React.createClass({
     	console.log('ProductDescription.react: componentWillUnmount')
 	},
 
-	_onChange: function() {
-    	console.log('ProductDescription.react: _onChange')
-		this.state({
-		});
-	},
-
 	render: function() {
+		var content = <div></div>;
 		var names = StringUtils.split2(this.props.product.name);
 		var seller = StringUtils.split2(this.props.product.customer.name);
+
 		return (
 			<div ref="product-description" id="product-description">
 	            <ul id="tab-01" className="nav nav-tabs">
@@ -60,7 +47,7 @@ var ProductDescription = React.createClass({
 	                  </div>
 	                </div>
 	              </div>
-	              <div id="product-tab-01" className="tab-pane active">
+	              <div id="product-tab-01" className="tab-pane">
 	                <div className="row">
 	                  <div className="col-md-12">
 	                    <h4>{seller[0]}&nbsp;<span className="semi-bold">{seller[1]}</span></h4>

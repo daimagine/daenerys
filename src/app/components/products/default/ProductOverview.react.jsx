@@ -1,21 +1,21 @@
 var React = require('react');
 var Router = require('react-router');
-var State = Router.State;
 var Link = Router.Link;
 var ReactPropTypes = React.PropTypes;
-var ReactBootstrap = require('react-bootstrap')
-	, Modal = ReactBootstrap.Modal
-	, Button = ReactBootstrap.Button
-	, Input = ReactBootstrap.Input;
-var AppConstants = require('../../constants/AppConstants.js')	
+var AppConstants = require('../../../constants/AppConstants.js')	
 	, ProductCategory = AppConstants.ProductCategory;
+var Config = require('config');
 
 
 var ProductOverview = React.createClass({
 	propsTypes: {
+		affiliator: ReactPropTypes.object,
 		product: ReactPropTypes.object
 	},
 	render: function() {
+		var paymentPage = Config.ShortlrAPIRoot + "/" + this.props.product.token
+							+ "?aff_id=" + this.props.affiliator.id;
+
 		var categoryEntity = (<div></div>);
 		if (this.props.product.category.id == ProductCategory.Digital) {
 			categoryEntity = (<DigitalEntity />);
@@ -37,6 +37,12 @@ var ProductOverview = React.createClass({
 						</div>
 					</div>
 					{categoryEntity}
+					<a href={paymentPage} params={{productId: this.props.hashedId}}
+						data-toggle="tooltip" data-placement="top" 
+						title="Penjual hanya akan mendapatkan uang jika barang sudah ada di tangan Anda." 
+						className="btn btn-warning btn-block btn-large tip">
+						Beli
+					</a>
 				</div>
 			</div>
 		);

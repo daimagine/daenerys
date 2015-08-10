@@ -14,23 +14,8 @@ $(document).ready(function () {
 	/*-----  End of REMOVE GEROBAK-LOAD ATTR  ------*/
 
 
-
 	/*==========  CALCULATE HEIGHT  ==========*/
 	calculateHeight();
-
-
-
-	/*==========  REMOVING WIDGET  ==========*/
-	$(".remove-widget").click(function () {
-		$(this).parent().parent().parent().addClass('animated fadeOut');
-		$(this).parent().parent().parent().attr('id', 'id_a');
-
-		//$(this).parent().parent().parent().hide();
-		setTimeout(function () {
-				$('#id_a').remove();
-		}, 400);
-		return false;
-	});
 
 
 	/*==========  INPUT PLUGINS  ==========*/
@@ -84,35 +69,11 @@ $(document).ready(function () {
 			$('[data-sync-height="true"]').each(function () {
 					equalHeight($(this).children());
 			});
-
 	});
- // initMainMenu();
-	
-
-	/*==========  BEGIN Fixed Menu  ==========*/
-	function initMainMenu() {
-	}
-	initExtendedLayoutMenuScroll();
-	function initExtendedLayoutMenuScroll(){
-	}
 
 
 	/*==========  TOOLTIP  ==========*/
 	$('.tip').tooltip();
-
-
-
-	/*==========  BEGIN Horinzontal Menu  ==========*/
-	$('.horizontal-menu .bar-inner > ul > li').on('click', function () {
-			$(this).toggleClass('open').siblings().removeClass('open');
-
-	});
-	 if($('body').hasClass('horizontal-menu')){
-			$('.content').on('click', function () {
-					$('.horizontal-menu .bar-inner > ul > li').removeClass('open');
-			});
-	 }
-	
 
 
 	/*==========  BEGIN Lazyload images  ==========*/
