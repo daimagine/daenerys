@@ -4,13 +4,18 @@ var Link = Router.Link;
 var ReactPropTypes = React.PropTypes;
 var AppConstants = require('../../../constants/AppConstants.js')	
 	, ProductCategory = AppConstants.ProductCategory;
+var Config = require('config');
 
 
 var ProductOverview = React.createClass({
 	propsTypes: {
+		affiliator: ReactPropTypes.object,
 		product: ReactPropTypes.object
 	},
 	render: function() {
+		var paymentPage = Config.ShortlrAPIRoot + "/" + this.props.product.token
+							+ "?aff_id=" + this.props.affiliator.id;
+
 		var categoryEntity = (<div></div>);
 		if (this.props.product.category.id == ProductCategory.Digital) {
 			categoryEntity = (<DigitalEntity />);
@@ -32,12 +37,12 @@ var ProductOverview = React.createClass({
 						</div>
 					</div>
 					{categoryEntity}
-					<Link to="payment" params={{productId: this.props.hashedId}}
-						href="javascript:;" data-toggle="tooltip" data-placement="top" 
+					<a href={paymentPage} params={{productId: this.props.hashedId}}
+						data-toggle="tooltip" data-placement="top" 
 						title="Penjual hanya akan mendapatkan uang jika barang sudah ada di tangan Anda." 
 						className="btn btn-warning btn-block btn-large tip">
 						Beli
-					</Link>
+					</a>
 				</div>
 			</div>
 		);

@@ -1,12 +1,10 @@
 var keyMirror = require('keymirror');
-
-var AppRoot = "http://127.0.0.1:3334/";
-var APIRoot = "http://localhost:3000/api/v1";
+var Config = require('config');
 
 module.exports = {
 
   APIEndpoints: {
-    PRODUCTS:  APIRoot + "/products",
+    AFFILIATE_PRODUCT:  Config.APIRoot + "/affiliate_product",
   },
 
   ProductCategory: {
@@ -28,11 +26,9 @@ module.exports = {
   }),
 
   ActionTypes: keyMirror({
-    // Products
-    LOAD_PRODUCTS: null,
-    RECEIVE_PRODUCTS: null,
-    LOAD_PRODUCT: null,
-    RECEIVE_PRODUCT: null,
+    // Affiliate
+    LOAD_AFFILIATE_PRODUCT: null,
+    RECEIVE_AFFILIATE_PRODUCT: null,
   })
 
 };

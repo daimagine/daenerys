@@ -5,9 +5,9 @@ var ActionTypes = AppConstants.ActionTypes;
 
 module.exports = {
 
-  receiveProduct: function(json, errors, messages) {
+  receiveAffiliateProduct: function(json, errors, messages) {
     AppDispatcher.handleServerAction({
-      type: ActionTypes.RECEIVE_PRODUCT,
+      type: ActionTypes.RECEIVE_AFFILIATE_PRODUCT,
       json: json,
       errors: errors,
       messages: messages

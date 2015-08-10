@@ -6,7 +6,7 @@ var Router = require('react-router');
 var routes = require('../routes.jsx');
 
 var AppConstants = require('../constants/AppConstants.js');
-var ProductStore = require('../stores/ProductStore.react.jsx');
+var AffiliateStore = require('../stores/AffiliateStore.react.jsx');
 
 var router = Router.create({
   routes: routes,
@@ -41,7 +41,7 @@ var RouteStore = assign({}, EventEmitter.prototype, {
 
 RouteStore.dispatchToken = AppDispatcher.register(function(payload) {
   AppDispatcher.waitFor([
-    ProductStore.dispatchToken
+    AffiliateStore.dispatchToken
   ]);
 
   var action = payload.action;
