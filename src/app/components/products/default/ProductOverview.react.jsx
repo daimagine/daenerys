@@ -13,8 +13,7 @@ var ProductOverview = React.createClass({
 		product: ReactPropTypes.object
 	},
 	render: function() {
-		var paymentPage = Config.ShortlrAPIRoot + "/" + this.props.product.token
-							+ "?aff_id=" + this.props.affiliator.id;
+		var paymentPage = Config.ShortlrAPIRoot + "/" + this.props.product.token;
 
 		var categoryEntity = (<div></div>);
 		if (this.props.product.category.id == ProductCategory.Digital) {
