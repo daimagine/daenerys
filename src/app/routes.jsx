@@ -9,6 +9,6 @@ var BaseProductPage = require('./components/products/BaseProductPage.react.jsx')
 
 module.exports = (
   <Route name="app" handler={App}>
-    <Route name="product" path="/products/:token" handler={BaseProductPage} />
+    <Route name="product" path="/:token" handler={BaseProductPage} />
   </Route>
 );
