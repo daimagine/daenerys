@@ -9,11 +9,12 @@ var Config = require('config');
 
 var ProductOverview = React.createClass({
 	propsTypes: {
+		affiliate: ReactPropTypes.object,
 		affiliator: ReactPropTypes.object,
 		product: ReactPropTypes.object
 	},
 	render: function() {
-		var paymentPage = Config.ShortlrAPIRoot + "/" + this.props.product.token;
+		var paymentPage = Config.ShortlrAPIRoot + "/" + this.props.affiliate.token;
 
 		var categoryEntity = (<div></div>);
 		if (this.props.product.category.id == ProductCategory.Digital) {
