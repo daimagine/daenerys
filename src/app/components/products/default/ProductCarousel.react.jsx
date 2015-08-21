@@ -37,8 +37,7 @@ var ProductImage = React.createClass({
 	render: function() {
 		return(
 			<div className="item">
-				<img src="/assets/images/ajax-loader.gif"
-	          		data-lazy={ this.props.imageURL }
+				<img src={ this.props.imageURL }
 	          		className="img-responsive center lazy" />
 	        </div>
 		);
