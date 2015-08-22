@@ -4,13 +4,14 @@
   "description": "",
   "main": "src/app/app.jsx",
   "scripts": {
-    "dev": "NODE_ENV=dev webpack --display-errors --config codekit.webpack.config.js",
+    "dev": "NODE_ENV=dev webpack --display-errors --config codekit.webpack.config.js && httpster -d dist -s -p 5000",
     "dev-server": "webpack-dev-server --devtool eval --progress --colors --hot --content-base dist --config codekit.webpack.config.js",
     "staging": "NODE_ENV=staging webpack -p --config codekit.webpack.config.js",
     "deploy": "NODE_ENV=production webpack -p --config codekit.webpack.config.js"
   },
   "author": "",
   "dependencies": {
+    "accounting": "^0.4.1",
     "bootstrap": "^3.3.0",
     "flux": "^2.0.1",
     "jwt-decode": "^1.1.0",

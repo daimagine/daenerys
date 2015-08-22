@@ -5,6 +5,7 @@ var ReactPropTypes = React.PropTypes;
 var AppConstants = require('../../../constants/AppConstants.js')	
 	, ProductCategory = AppConstants.ProductCategory;
 var Config = require('config');
+var NumberFormatter = require('../../../utils/StringUtils.js').numberFormatter();
 
 
 var ProductOverview = React.createClass({
@@ -33,7 +34,7 @@ var ProductOverview = React.createClass({
 					<div className="entitites">
 						<div className="icon"><span className="fa fa-tag"></span></div>
 						<div className="entity-content">
-							<p>Rp. {this.props.product.price}</p>
+							<p>{NumberFormatter.formatMoney(this.props.product.price)}</p>
 						</div>
 					</div>
 					{categoryEntity}
