@@ -58,14 +58,45 @@ var BaseProductPage = React.createClass({
 	    	document.head.appendChild(style);
 	    	console.log('BaseProductPage.react: adding custom style', style);
 
-	    	// add twitter card
+	    	// add meta tags
 	    	/**
-				<meta name="twitter:card" content="summary_large_image">
-				<meta name="twitter:site" content="@jualio">
-				<meta name="twitter:creator" content="@jualio">
-				<meta name="twitter:title" content="">
-				<meta name="twitter:description" content="">
-				<meta name="twitter:image" content="">
+				<!--Facebook-->
+			    <meta property="og:site_name" content="Jualio" />
+			    <meta property="og:url" content="https://p.jual.io/oqhgn0" />
+			    <meta property="og:title" content="Langganan Majalah Marketeers 12 Edisi" />
+			    <meta property="og:type" content="product" />
+			    <meta property="og:image" content="https://i.jual.io/jualio-img-6cae5609-59a1-41a0-a97b-e166e2434b6d.jpg" />
+			    <meta property="og:description" content="Langganan Majalah Marketeers 12 Edisi Rp. 500,000 Anda akan mendapatkan langganan majalah Marketeers selama 1 tahun &#x28;12 edisi&#x29; langsung ke tempat Anda&#x21; <br>
+			<br>
+			Free ongkir ke seluruh Indonesia selama satu tahun untuk Anda yang berlangganan majalah selama satu tahun. <br>
+			<br>
+			Majalah Marketeers merupakan majalah bulanan yang mengupas knowledge seputar New Wave Marketing. Majalah Marketeers juga merupakan majalah yang unik dan berbeda dengan majalah marketing lainnya.  Dilengkapi dengan case study lokal dan internasional&#44; ditunjungan oleh thought leadershio MarkPlus Consulting&#44; serta didukung oleh hasil riset MarkPlus Insight menjadikan majalah ini tidak hanya mengubah data menjadi informasi&#44; melainkan mengubah informasi menjadi knowledge bagi para pembacanya. " />
+			    
+			    <!--Twitter-->
+			    <meta name="twitter:card" content="summary_large_image"> 
+			    <meta name="twitter:site" content="@JualioID">
+			                    <meta name="twitter:creator" content="@the_marketeers"> 
+			    
+			    <meta name="twitter:label1" content="Harga"> <!-- price -->
+			    <meta name="twitter:data1" content="Rp. 500,000"> <!-- price-amount -->
+			    <meta name="twitter:image" content="https://i.jual.io/jualio-img-6cae5609-59a1-41a0-a97b-e166e2434b6d.jpg">
+			    
+			    <meta name="twitter:description" content="Langganan Majalah Marketeers 12 Edisi Rp. 500,000 Anda akan mendapatkan langganan majalah Marketeers selama 1 tahun &#x28;12 edisi&#x29; langsung ke tempat Anda&#x21; <br>
+			<br>
+			Free ongkir ke seluruh Indonesia selama satu tahun untuk Anda yang berlangganan majalah selama satu tahun. <br>
+			<br>
+			Majalah Marketeers merupakan majalah bulanan yang mengupas knowledge seputar New Wave Marketing. Majalah Marketeers juga merupakan majalah yang unik dan berbeda dengan majalah marketing lainnya.  Dilengkapi dengan case study lokal dan internasional&#44; ditunjungan oleh thought leadershio MarkPlus Consulting&#44; serta didukung oleh hasil riset MarkPlus Insight menjadikan majalah ini tidak hanya mengubah data menjadi informasi&#44; melainkan mengubah informasi menjadi knowledge bagi para pembacanya. ">
+			    <!--meta name="twitter:description" content="Anda akan mendapatkan langganan majalah Marketeers selama 1 tahun &#x28;12 edisi&#x29; langsung ke tempat Anda&#x21; <br>
+			<br>
+			Free ongkir ke seluruh Indonesia selama satu tahun untuk Anda yang berlangganan majalah selama satu tahun. <br>
+			<br>
+			Majalah Marketeers merupakan majalah bulanan yang mengupas knowledge seputar New Wave Marketing. Majalah Marketeers juga merupakan majalah yang unik dan berbeda dengan majalah marketing lainnya.  Dilengkapi dengan case study lokal dan internasional&#44; ditunjungan oleh thought leadershio MarkPlus Consulting&#44; serta didukung oleh hasil riset MarkPlus Insight menjadikan majalah ini tidak hanya mengubah data menjadi informasi&#44; melainkan mengubah informasi menjadi knowledge bagi para pembacanya. "-->
+			    <meta name="twitter:title" content="Langganan Majalah Marketeers 12 Edisi">
+			    <meta name="twitter:label2" content="Lokasi Barang"> <!-- custom -->
+			    <meta name="twitter:data2" content="JAKARTA"> <!-- custom -->
+			    <meta name="twitter:url" content="https://p.jual.io/oqhgn0">
+			    <meta name="robots" content="index,follow" />
+			    <meta name="googlebot" content="index,follow" />
 	    	 **/
 	    	var meta = document.createElement('meta');
 	    	meta.setAttribute('twitter:card', 'summary_large_image');

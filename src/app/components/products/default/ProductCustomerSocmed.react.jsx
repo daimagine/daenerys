@@ -21,7 +21,7 @@ var ProductCustomerSocmed = React.createClass({
           <ul className="list-inline with-margin">
             {this.props.product.customer.socmed_accounts.map(function(socmedAccount, index){
               return (
-                <li>
+                <li key={"key-"+index}>
                   { (() => {
                     switch(socmedAccount.social_media.id) {
                       case SocmedType.Twitter: 
